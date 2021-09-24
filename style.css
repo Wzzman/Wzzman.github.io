@@ -1,0 +1,20 @@
+header {
+	background-color:#30506f;
+}
+body {
+  /* background-image: url('background.png');*/
+  text-align: center;
+}
+h1 {
+	color: white;
+}
+
+legend {
+	width: 240px;
+}
+div.mn {
+	display: flex;
+	justify-content: space-around;
+}
+
+
