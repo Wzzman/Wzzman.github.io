@@ -31,5 +31,5 @@ function RefreshAll() // schaltet Namesbereich aus
 }
 
 // document.getElementById("demo").innerHTML = "Hello JavaScript"; // geht
-
+// paam yopte amigos
 
