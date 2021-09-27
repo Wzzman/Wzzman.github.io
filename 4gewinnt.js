@@ -17,9 +17,9 @@ function alertKomm() {
 
 function SaveNames() // save the names
 {
-	 Player1.name = document.getElementById("name1").value;
-	 Player2.name = document.getElementById("name2").value;
-   document.getElementsByClassName('playground')[0].style.display = "initial";
+	Player1.name = document.getElementById("name1").value;
+	Player2.name = document.getElementById("name2").value;
+    document.getElementsByClassName('playground')[0].style.display = "initial";
   
 	ChangeNames(Player1.name, Player2.name);
 	MenuOffner();
@@ -27,8 +27,8 @@ function SaveNames() // save the names
 
 function ChangeNames(NM1, NM2) // ändert Playersnamen
 {
-	document.getElementById("nm1").innerHTML = NM1;
-	document.getElementById("nm2").innerHTML = NM2;
+	document.getElementById("nm1").innerHTML = "Player 1 name: " + NM1;
+	document.getElementById("nm2").innerHTML = "Player 1 name: " + NM2;
 }
 
 function MenuOffner() // schaltet Namesbereich aus
@@ -41,6 +41,7 @@ function RefreshAll() // schaltet Namesbereich aus
 	document.getElementsByClassName('pn')[0].style.display = "";
 	document.getElementById("name1").value = "";
 	document.getElementById("name2").value = "";
+	document.getElementsByClassName('playground')[0].style.display = "none";
 }
 
 // document.getElementById("demo").innerHTML = "Hello JavaScript"; // geht
