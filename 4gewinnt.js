@@ -17,8 +17,17 @@ function alertKomm() {
 
 function SaveNames() // save the names
 {
-	Player1.name = document.getElementById("name1").value;
-	Player2.name = document.getElementById("name2").value;
+	if(document.getElementById("name1").value != "" && document.getElementById("name1").value != "(change here)"){
+		Player1.name = document.getElementById("name1").value;
+	} else {
+		Player1.name = prompt("Please enter your name", "Harry Potter");
+	}
+	if(document.getElementById("name2").value != "" && document.getElementById("name2").value != "(change here)"){
+		Player2.name = document.getElementById("name2").value;
+	}  else {
+		Player2.name = prompt("Please enter your name", "Albus Dambldor");
+	}
+	
     document.getElementsByClassName('playground')[0].style.display = "initial";
   
 	ChangeNames(Player1.name, Player2.name);
