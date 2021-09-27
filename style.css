@@ -24,7 +24,19 @@ div.mn {
 
 .playground {
   display: none;
-  height: 500px;
-  border-style: solid;
+  /* height: 500px; */
+  
+}
+
+footer {
+   position: fixed;
+   display: flex;
+   justify-content: space-around;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #30506f;
+   color: white;
+   text-align: center;
 }
 
