@@ -9,6 +9,11 @@ h1 {
 	color: white;
 }
 
+.status {
+	display: flex;
+	justify-content: space-around;
+}
+
 legend {
 	width: 240px;
 }
@@ -17,4 +22,9 @@ div.mn {
 	justify-content: space-around;
 }
 
+.playground {
+  display: none;
+  height: 500px;
+  border-style: solid;
+}
 
