@@ -1,20 +1,20 @@
 // wssp, hier sind alle meine Funktionen gesammelt.
 
 
-let Player1 = {     // объект
-  name: "noname",  // под ключом "name" хранится значение "John"
-  key: 1        // под ключом "age" хранится значение 30
+let Player1 = {     
+  name: "noname",   
+  key: 1        
 };
 
-let Player2 = {     // объект
-  name: "noname",  // под ключом "name" хранится значение "John"
-  key: 2        // под ключом "age" хранится значение 30
+let Player2 = {     
+  name: "noname",  
+  key: 2        
 };
 
 let aPlayer = "";
 
-function alertKomm() {
-  alert("Willkommen bei meinem 4Gewinnt-Spiel");
+function alertKomm(btnNR) {
+  alert("du hast diese Column gewählt: " + btnNR);
 }
 
 function SaveNames() // save the names
@@ -41,8 +41,8 @@ function SaveNames() // save the names
 
 function ChangeNames(NM1, NM2) // ändert Playersnamen
 {
-	document.getElementById("nm1").innerHTML = "Player 1 name: " + NM1;
-	document.getElementById("nm2").innerHTML = "Player 2 name: " + NM2;
+	document.getElementById("nm1").innerHTML = "Player 1: " + NM1;
+	document.getElementById("nm2").innerHTML = "Player 2: " + NM2;
 	
 }
 
