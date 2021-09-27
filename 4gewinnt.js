@@ -15,6 +15,7 @@ let aPlayer = "";
 
 function alertKomm(btnNR) {
   alert("du hast diese Column gewählt: " + btnNR);
+  ActivePlayer();
 }
 
 function SaveNames() // save the names
