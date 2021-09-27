@@ -11,6 +11,8 @@ let Player2 = {     // объект
   key: 2        // под ключом "age" хранится значение 30
 };
 
+let aPlayer = "";
+
 function alertKomm() {
   alert("Willkommen bei meinem 4Gewinnt-Spiel");
 }
@@ -33,12 +35,24 @@ function SaveNames() // save the names
   
 	ChangeNames(Player1.name, Player2.name);
 	MenuOffner();
+	
+	ActivePlayer();
 }
 
 function ChangeNames(NM1, NM2) // ändert Playersnamen
 {
 	document.getElementById("nm1").innerHTML = "Player 1 name: " + NM1;
-	document.getElementById("nm2").innerHTML = "Player 1 name: " + NM2;
+	document.getElementById("nm2").innerHTML = "Player 2 name: " + NM2;
+	
+}
+
+function ActivePlayer() // ändert Playersnamen
+{
+	if(aPlayer == Player2.name){aPlayer = Player1.name}
+	else if(aPlayer == Player1.name){aPlayer = Player2.name}
+	else {aPlayer = Player1.name}
+	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
+	
 }
 
 function MenuOffner() // schaltet Namesbereich aus
