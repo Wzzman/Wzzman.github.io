@@ -66,6 +66,8 @@ function RefreshAll() // schaltet Namesbereich aus
 	document.getElementById("name1").value = "";
 	document.getElementById("name2").value = "";
 	document.getElementsByClassName('playground')[0].style.display = "none";
+	
+	aPlayer = "";
 }
 
 // document.getElementById("demo").innerHTML = "Hello JavaScript"; // geht
