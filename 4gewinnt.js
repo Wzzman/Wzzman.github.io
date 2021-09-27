@@ -22,6 +22,7 @@ function SaveNames() // save the names
 	} else {
 		Player1.name = prompt("Please enter your name", "Harry Potter");
 	}
+	
 	if(document.getElementById("name2").value != "" && document.getElementById("name2").value != "(change here)"){
 		Player2.name = document.getElementById("name2").value;
 	}  else {
