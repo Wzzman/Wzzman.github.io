@@ -26,9 +26,18 @@ div.mn {
 }
 
 .playground {
-  display: none;
+ /* display: none; */
   /* height: 500px; */
   
+}
+
+.kvadrat{
+    text-align: left;
+    margin: 15 auto;
+	height: 230px;
+	width: 280px;
+	background-color: gray;
+	justify-content: space-around; /*  */
 }
 
 footer {
@@ -42,6 +51,7 @@ footer {
    color: white;
    text-align: center;
 }
+
 
 
 

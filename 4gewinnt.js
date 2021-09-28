@@ -1,5 +1,5 @@
 // wssp, hier sind alle meine Funktionen gesammelt.
-
+var table = [7][6];
 
 let Player1 = {     
   name: "noname",   
