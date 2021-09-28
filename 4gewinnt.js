@@ -1,6 +1,3 @@
-// wssp, hier sind alle meine Funktionen gesammelt.
-var table = [7][6];
-
 let Player1 = {     
   name: "noname",   
   key: 1        
@@ -12,10 +9,52 @@ let Player2 = {
 };
 
 let aPlayer = "";
+let aKey = 2;
+
+var div = document.querySelector(".kvadrat");
+
+// Create one dimensional array
+    var gfg = new Array(7);
+	
+// Loop to create 2D array using 1D array
+for (var i = 0; i < gfg.length; i++) {
+    gfg[i] = new Array(6);
+}
+  
+var h = 0;
+  
+// Loop to initialize 2D array elements.
+for (var i = 0; i < 6; i++) {
+    for (var j = 0; j < 7; j++) {
+        gfg[i][j] = 0;
+    }
+}
+  
+// Loop to display the elements of 2D array. 
+function drawTable(aKey){
+for (var i = 0; i < 6; i++) {
+	document.write("<br>");
+    for (var j = 0; j < 7; j++)    {
+        document.write(" | " + gfg[i][j] + " | " );
+		document.write(" ");
+    }
+    document.write("<br>");
+} 
+}
+drawTable(aKey);
 
 function alertKomm(btnNR) {
-  alert("du hast diese Column gewählt: " + btnNR);
+ // alert("du hast diese Column gewählt: " + btnNR);
   ActivePlayer();
+  for (var i = 0; i < 6; i++) {
+   
+        if(gfg[5 - i][btnNR] == 0){
+			gfg[5 - i][btnNR] = aKey;
+			drawTable(aKey);
+			break;
+		}
+		
+}
 }
 
 function SaveNames() // save the names
@@ -38,6 +77,7 @@ function SaveNames() // save the names
 	MenuOffner();
 	
 	ActivePlayer();
+	
 }
 
 function ChangeNames(NM1, NM2) // ändert Playersnamen
@@ -49,9 +89,9 @@ function ChangeNames(NM1, NM2) // ändert Playersnamen
 
 function ActivePlayer() // ändert Playersnamen
 {
-	if(aPlayer == Player2.name){aPlayer = Player1.name}
-	else if(aPlayer == Player1.name){aPlayer = Player2.name}
-	else {aPlayer = Player1.name}
+	if(aPlayer == Player2.name){aPlayer = Player1.name; aKey = Player1.key}
+	else if(aPlayer == Player1.name){aPlayer = Player2.name; aKey = Player1.key;}
+	else {aPlayer = Player1.name; aKey = Player1.key}
 	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
 	
 }
