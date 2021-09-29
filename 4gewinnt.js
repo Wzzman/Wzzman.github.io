@@ -33,7 +33,8 @@ for (var i = 0; i < 6; i++) {
 // Loop to display the elements of 2D array. 
 function drawTable(aKey){
 //	var x = document.getElementsByClassName(".kvadrat");
-	//x.style.fontcolor = "white";
+	document.querySelector(".kvadrat").style.color = "white";
+	document.querySelector(".kvadrat").innerHTML = "";
 for (var i = 0; i < 6; i++) {
 	document.querySelector(".kvadrat").innerHTML +="<br>";
     for (var j = 0; j < 7; j++)    {
@@ -42,20 +43,19 @@ for (var i = 0; i < 6; i++) {
     }
     document.querySelector(".kvadrat").innerHTML +="<br>";
 } 
+
 }
-drawTable(aKey);
+// drawTable(aKey);
 
 function alertKomm(btnNR) {
  // alert("du hast diese Column gewählt: " + btnNR);
   ActivePlayer();
   for (var i = 0; i < 6; i++) {
-   
         if(gfg[5 - i][btnNR] == 0){
 			gfg[5 - i][btnNR] = aKey;
 			drawTable(aKey);
 			break;
 		}
-		
 }
 }
 
@@ -77,23 +77,31 @@ function SaveNames() // save the names
   
 	ChangeNames(Player1.name, Player2.name);
 	MenuOffner();
-	
 	ActivePlayer();
-	
+	drawTable();
 }
 
 function ChangeNames(NM1, NM2) // ändert Playersnamen
 {
 	document.getElementById("nm1").innerHTML = "Player 1: " + NM1;
 	document.getElementById("nm2").innerHTML = "Player 2: " + NM2;
-	
 }
 
 function ActivePlayer() // ändert Playersnamen
 {
-	if(aPlayer == Player2.name){aPlayer = Player1.name; aKey = Player1.key}
-	else if(aPlayer == Player1.name){aPlayer = Player2.name; aKey = Player1.key;}
-	else {aPlayer = Player1.name; aKey = Player1.key}
+	if(aPlayer == Player2.name){
+		aPlayer = Player1.name;
+		aKey = Player1.key;
+		}
+	else if(aPlayer == Player1.name){
+		aPlayer = Player2.name; 
+		aKey = Player1.key;
+		}
+	else {
+		aPlayer = Player1.name; 
+		aKey = Player1.key;
+		
+		}
 	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
 	
 }
