@@ -1,15 +1,15 @@
 let Player1 = {     
   name: "noname",   
-  key: 1        
+  key: 2        // SPÄTER ÄNDERN ZURUCK. warum so?
 };
 
 let Player2 = {     
   name: "noname",  
-  key: 2        
+  key: 1   
 };
 
 let aPlayer = "";
-let aKey = 2;
+let aKey = 0;
 
 var div = document.querySelector(".kvadrat");
 
@@ -95,12 +95,11 @@ function ActivePlayer() // ändert Playersnamen
 		}
 	else if(aPlayer == Player1.name){
 		aPlayer = Player2.name; 
-		aKey = Player1.key;
+		aKey = Player2.key;
 		}
 	else {
 		aPlayer = Player1.name; 
-		aKey = Player1.key;
-		
+		aKey = Player2.key;
 		}
 	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
 	
