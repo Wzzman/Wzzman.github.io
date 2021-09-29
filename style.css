@@ -31,11 +31,13 @@ div.mn {
   
 }
 
-#kvadrat{
+.kvadrat{
     text-align: left;
     margin: 15 auto;
+	padding: 10px;
+	padding-left: 20px;
 	height: 230px;
-	width: 280px;
+	width: 220px;
 	background-color: gray;
 	justify-content: space-around; /*  */
 }

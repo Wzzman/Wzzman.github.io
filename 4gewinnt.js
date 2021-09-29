@@ -32,13 +32,15 @@ for (var i = 0; i < 6; i++) {
   
 // Loop to display the elements of 2D array. 
 function drawTable(aKey){
+//	var x = document.getElementsByClassName(".kvadrat");
+	//x.style.fontcolor = "white";
 for (var i = 0; i < 6; i++) {
-	document.write("<br>");
+	document.querySelector(".kvadrat").innerHTML +="<br>";
     for (var j = 0; j < 7; j++)    {
-        document.write(" | " + gfg[i][j] + " | " );
-		document.write(" ");
+        document.querySelector(".kvadrat").innerHTML += " | " + gfg[i][j] + " | ";
+		document.querySelector(".kvadrat").innerHTML +=" ";
     }
-    document.write("<br>");
+    document.querySelector(".kvadrat").innerHTML +="<br>";
 } 
 }
 drawTable(aKey);
@@ -116,5 +118,7 @@ function RefreshAll() // schaltet Namesbereich aus
 // childNods
 
 
-
+//  document.addEventListener("click", function(){
+//  document.getElementById("demo").innerHTML = "Hello World!";
+//  });
 
