@@ -8,10 +8,13 @@ let Player2 = {
   key: 1   
 };
 
+let gameOn = false;
 let aPlayer = "";
 let aKey = 0;
 
-var div = document.querySelector(".kvadrat");
+// var div = document.querySelector(".kvadrat");
+
+document.getElementsByClassName('playground')[0].style.display = "none";
 
 // Create one dimensional array
     var gfg = new Array(7);
@@ -21,17 +24,20 @@ for (var i = 0; i < gfg.length; i++) {
     gfg[i] = new Array(6);
 }
   
-var h = 0;
+// var h = 0;
   
 // Loop to initialize 2D array elements.
-for (var i = 0; i < 6; i++) {
+function feldInitialization(){
+	for (var i = 0; i < 6; i++) {
     for (var j = 0; j < 7; j++) {
         gfg[i][j] = 0;
     }
 }
+}
+feldInitialization();
   
 // Loop to display the elements of 2D array. 
-function drawTable(aKey){
+function drawTable(){
 //	var x = document.getElementsByClassName(".kvadrat");
 	document.querySelector(".kvadrat").style.color = "white";
 	document.querySelector(".kvadrat").innerHTML = "";
@@ -49,14 +55,24 @@ for (var i = 0; i < 6; i++) {
 
 function alertKomm(btnNR) {
  // alert("du hast diese Column gewählt: " + btnNR);
-  ActivePlayer();
-  for (var i = 0; i < 6; i++) {
-        if(gfg[5 - i][btnNR] == 0){
+ if(gameOn){
+	  ActivePlayer();
+	  for (var i = 0; i < 6; i++) {
+         if(gfg[5 - i][btnNR] == 0){
 			gfg[5 - i][btnNR] = aKey;
-			drawTable(aKey);
+			drawTable();
 			break;
 		}
-}
+	  else if(gfg[0][btnNR] != 0){
+		  alert("The column is full, please choose another column");
+		  ActivePlayer();
+		  break;
+	  }
+      }
+ } else {
+	 SaveNames();
+   }
+ 
 }
 
 function SaveNames() // save the names
@@ -74,7 +90,9 @@ function SaveNames() // save the names
 	}
 	
     document.getElementsByClassName('playground')[0].style.display = "initial";
-  
+    
+	gameOn = true;
+	
 	ChangeNames(Player1.name, Player2.name);
 	MenuOffner();
 	ActivePlayer();
@@ -116,7 +134,7 @@ function RefreshAll() // schaltet Namesbereich aus
 	document.getElementById("name1").value = "";
 	document.getElementById("name2").value = "";
 	document.getElementsByClassName('playground')[0].style.display = "none";
-	
+	feldInitialization();
 	aPlayer = "";
 }
 

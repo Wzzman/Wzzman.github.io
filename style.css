@@ -1,14 +1,15 @@
 html{
 	font-family: 'Roboto', sans-serif;
 }
+
 header {
 	background-color:#30506f;
 }
+
 body {
-  /* background-image: url('background.png'); */
-  /* background-image: url('3.gif');*/
   text-align: center;
 }
+
 h1 {
 	color: white;
 }
@@ -21,15 +22,10 @@ h1 {
 legend {
 	width: 240px;
 }
+
 div.mn {
 	display: flex;
 	justify-content: space-around;
-}
-
-.playground {
- /* display: none; */
-  /* height: 500px; */
-  
 }
 
 .kvadrat{
