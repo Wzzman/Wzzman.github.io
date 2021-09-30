@@ -1,12 +1,12 @@
 html{
 	font-family: 'Roboto', sans-serif;
 }
-
 header {
 	background-color:#30506f;
 }
-
 body {
+  /* background-image: url('background.png'); */
+  /* background-image: url('3.gif');*/
   text-align: center;
 }
 
@@ -38,7 +38,9 @@ div.mn {
 	background-color: gray;
 	justify-content: space-around; /*  */
 }
-
+#salute{
+	display: none;
+}
 footer {
    position: fixed;
    display: flex;
