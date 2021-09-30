@@ -1,10 +1,16 @@
+html{
+	font-family: 'Roboto', sans-serif;
+}
 header {
 	background-color:#30506f;
 }
 body {
-  /* background-image: url('background.png');*/
+   background-image: url('background.png'); 
+    background-size: 100%;
+  /* background-image: url('3.gif');*/
   text-align: center;
 }
+
 h1 {
 	color: white;
 }
@@ -17,17 +23,25 @@ h1 {
 legend {
 	width: 240px;
 }
+
 div.mn {
 	display: flex;
 	justify-content: space-around;
 }
 
-.playground {
-  display: none;
-  /* height: 500px; */
-  
+.kvadrat{
+    text-align: left;
+    margin: 15 auto;
+	padding: 10px;
+	padding-left: 20px;
+	height: 230px;
+	width: 220px;
+	background-color: gray;
+	justify-content: space-around; /*  */
 }
-
+#salute{
+	display: none;
+}
 footer {
    position: fixed;
    display: flex;
@@ -39,4 +53,7 @@ footer {
    color: white;
    text-align: center;
 }
+
+
+
 
