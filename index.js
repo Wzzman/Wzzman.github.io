@@ -1,6 +1,6 @@
 let Player1 = {     
   name: "noname",   
-  key: 2        // SPÄTER ÄNDERN ZURUCK. warum so?
+  key: 2        // ?
 };
 
 let Player2 = {     
