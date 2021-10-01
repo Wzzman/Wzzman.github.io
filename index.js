@@ -10,7 +10,11 @@ let Player2 = {
   key: 1   
 };
 
-import {Player1} from './model1.js';
+import {M1Player1} from './model1.js';
+import {M1Player2} from './model1.js';
+
+Player1 = M1Player1;
+Player2 = M1Player2;
 
 let gameOn = true;
 let aPlayer = "";
