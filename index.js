@@ -1,25 +1,29 @@
+
+
 let Player1 = {     
-  name: "noname",   
+  name: "noname1",   
   key: 2        // ?
 };
 
 let Player2 = {     
-  name: "noname",  
+  name: "noname2",  
   key: 1   
 };
 
-let gameOn = false;
+import {Player1} from './model1.js';
+
+let gameOn = true;
 let aPlayer = "";
 let aKey = 0;
 
-document.getElementsByClassName('playground')[0].style.display = "none";
+document.getElementsByClassName('playground')[0].style.display = "initial";
 
 // Create one dimensional array
-    var gfg = new Array(7);
+var gfg = new Array(7);
 	
 // Loop to create 2D array using 1D array
 for (var i = 0; i < gfg.length; i++) {
-    gfg[i] = new Array(6);
+	gfg[i] = new Array(6);
 }
   
 // Loop to initialize 2D array elements.
@@ -47,7 +51,7 @@ for (var i = 0; i < 6; i++) {
 } 
 
 }
-// drawTable(aKey);
+ drawTable();
 
 function alertKomm(btnNR) {
  // alert("du hast diese Column gewählt: " + btnNR);
@@ -70,23 +74,13 @@ function alertKomm(btnNR) {
  } else {
 	 SaveNames();
    }
- 
 }
 
 function SaveNames() // save the names
 {
-	if(document.getElementById("name1").value != "" && document.getElementById("name1").value != "(change here)"){
 		Player1.name = document.getElementById("name1").value;
-	} else {
-		Player1.name = prompt("Please enter your name", "Harry Potter");
-	}
-	
-	if(document.getElementById("name2").value != "" && document.getElementById("name2").value != "(change here)"){
 		Player2.name = document.getElementById("name2").value;
-	}  else {
-		Player2.name = prompt("Please enter your name", "Albus Dambldor");
-	}
-	
+		
     document.getElementsByClassName('playground')[0].style.display = "initial";
     
 	gameOn = true;
