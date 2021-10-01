@@ -1,4 +1,4 @@
-export let Player1 = {     
+export let M1Player1 = {     
   name: "AAA1",   
   key: 2        
 };
