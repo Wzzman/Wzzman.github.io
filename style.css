@@ -5,8 +5,8 @@ header {
 	background-color:#30506f;
 }
 body {
-   background-image: url('background.png'); 
-    background-size: 100%;
+ /*  background-image: url('background.png'); */
+   
   /* background-image: url('3.gif');*/
   text-align: center;
 }
