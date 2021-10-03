@@ -1,3 +1,3 @@
 export function pinpPing (){
-    alert('such a dick')
+    alert('suck a dick')
 }

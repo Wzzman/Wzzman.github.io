@@ -1,3 +1,3 @@
-import { pinpPing } from "./model";
+import { pinpPing } from "./model.js";
 
 pinpPing()
