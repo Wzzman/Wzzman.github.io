@@ -1,3 +1,3 @@
 export function pinpPing (){
-    alert('suck a dick')
+    alert('ebis v ochko!')
 }
