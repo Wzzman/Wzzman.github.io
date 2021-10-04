@@ -1,4 +1,5 @@
-
+import {M1Player1} from './model1.js';
+import {M1Player2} from './model1.js';
 
 let Player1 = {     
   name: "noname1",   
@@ -10,8 +11,7 @@ let Player2 = {
   key: 1   
 };
 
-import {M1Player1} from './model1.js';
-import {M1Player2} from './model1.js';
+
 
 Player1 = M1Player1;
 Player2 = M1Player2;
