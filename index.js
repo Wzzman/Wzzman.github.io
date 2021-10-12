@@ -15,9 +15,11 @@ function P_Changer(){
 	if(aPlayer == Player1.name)
 	{
 	   aPlayer = Player2.name;
+	   document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
 	} else if(aPlayer == Player2.name)
 	{
 		aPlayer = Player1.name;
+		document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
 	 }
 } 
 
@@ -40,7 +42,7 @@ function importPlayers(){
 
 
 
-document.getElementsByClassName('playground')[0].style.display = "init";
+// document.getElementsByClassName('playground')[0].style.display = "init";
 
 var myField = feldInitialization();
 
