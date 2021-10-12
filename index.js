@@ -7,11 +7,10 @@ import { count, P1, P2 } from "./Player.js";
 var counter = count;
 var Player1 = P1;
 var Player2 = P2;
-var aPlayer = Player1.name;
+var aPlayer = "";
+var isImportiert = false;
 
 function P_Changer(){
-	// pinpPing();
-	// alert("ooop nichesebe");
 	if(aPlayer == Player1.name)
 	{
 	   aPlayer = Player2.name;
@@ -20,10 +19,14 @@ function P_Changer(){
 	{
 		aPlayer = Player1.name;
 		document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
+	 } else 
+	 {
+		alert("At first you most import the players.");
 	 }
 } 
 
 function importPlayers(){
+	aPlayer = Player1.name;
 	document.getElementById("nm1").innerHTML = "Player 1: " + Player1.name;
 	document.getElementById("nm2").innerHTML = "Player 2: " + Player2.name;
 	document.getElementById("smb1").innerHTML = "Symbol: " + Player1.key;
