@@ -5,48 +5,11 @@ import { pinpPing, saveNamesPls } from "./methoden.js";
 import { count, P1, P2 } from "./Player.js";
 
 var counter = count;
-var Player1 = P1;
-var Player2 = P2;
-var aPlayer = "";
-var isImportiert = false;
-
-function P_Changer(){
-	if(aPlayer == Player1.name)
-	{
-	   aPlayer = Player2.name;
-	   document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
-	} else if(aPlayer == Player2.name)
-	{
-		aPlayer = Player1.name;
-		document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
-	 } else 
-	 {
-		alert("At first you most import the players.");
-	 }
-} 
-
-function importPlayers(){
-	aPlayer = Player1.name;
-	document.getElementById("nm1").innerHTML = "Player 1: " + Player1.name;
-	document.getElementById("nm2").innerHTML = "Player 2: " + Player2.name;
-	document.getElementById("smb1").innerHTML = "Symbol: " + Player1.key;
-	document.getElementById("smb2").innerHTML = "Symbol: " + Player2.key;
-	// 
-	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
-	//
-    drawTable();
-	//
-		
-}
-
-
-//Player1 = M1Player1;
-//Player2 = M1Player2;
-
-
-
-// document.getElementsByClassName('playground')[0].style.display = "init";
-
+var Player1 = P1; // object
+var Player2 = P2; // object
+var aPlayer = ""; // string
+var aKey = 0; // int
+var gameOn = false;
 var myField = feldInitialization();
 
 // import Players, Players Keys and show it in body.
@@ -54,8 +17,149 @@ var saver = document.getElementById("saveBTN");
 saver.addEventListener("click", importPlayers, false);
 
 var a1 = document.getElementById("btn1");
-a1.addEventListener("click", P_Changer, false);
+a1.addEventListener("click", Column1Choosed, false);
+var a2 = document.getElementById("btn2");
+a2.addEventListener("click", Column2Choosed, false);
+var a3 = document.getElementById("btn3");
+a3.addEventListener("click", Column3Choosed, false);
+var a4 = document.getElementById("btn4");
+a4.addEventListener("click", Column4Choosed, false);
+var a5 = document.getElementById("btn5");
+a5.addEventListener("click", Column5Choosed, false);
+var a6 = document.getElementById("btn6");
+a6.addEventListener("click", Column6Choosed, false);
+var a7 = document.getElementById("btn7");
+a7.addEventListener("click", Column7Choosed, false);
 
+var s1 = document.getElementById("saveMe");
+s1.addEventListener("click", buyMe, false);
+var s2 = document.getElementById("loadMe");
+s2.addEventListener("click", buyMe, false);
+
+function importPlayers(){
+	gameOn = true;
+	aPlayer = Player1.name;
+	aKey = Player1.key;
+	document.getElementById("nm1").innerHTML = "Player 1: " + Player1.name;
+	document.getElementById("nm2").innerHTML = "Player 2: " + Player2.name;
+	document.getElementById("smb1").innerHTML = "Symbol: " + Player1.key;
+	document.getElementById("smb2").innerHTML = "Symbol: " + Player2.key;
+	document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
+    drawTable();	
+}
+
+function P_Changer(){
+	if(aPlayer == Player1.name)
+	{
+	   aPlayer = Player2.name;
+	   aKey = Player2.key;
+	   document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
+	} else if(aPlayer == Player2.name)
+	{
+		aPlayer = Player1.name;
+		aKey = Player1.key;
+		document.getElementById("ap").innerHTML = "Your turn, " + aPlayer;
+	 } else 
+	 {
+		alert("At first you most import the players.");
+	 }
+} 
+
+function Column1Choosed()
+{
+//prufung
+TurnProof(0);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column2Choosed()
+{
+//prufung
+TurnProof(1);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column3Choosed()
+{
+//prufung
+TurnProof(2);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column4Choosed()
+{
+//prufung
+TurnProof(3);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column5Choosed()
+{
+//prufung
+TurnProof(4);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column6Choosed()
+{
+//prufung
+TurnProof(5);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function Column7Choosed()
+{
+//prufung
+TurnProof(6);
+//change Pl
+P_Changer();
+//draw
+drawTable();
+}
+
+function TurnProof(btnNR) {
+ // alert("du hast diese Column gewählt: " + btnNR);
+ if(gameOn){
+	  for (var i = 0; i < 6; i++) {
+         if(myField[5 - i][btnNR] == 0){
+			myField[5 - i][btnNR] = aKey;
+			
+			drawTable();
+			winProof(aKey)
+			// P_Changer();
+			break;
+		}
+	  else if(myField[0][btnNR] != 0){
+		  alert("The column is full, please choose another column");
+		//   ActivePlayer();
+		  break;
+	  }
+      }
+ }
+}
+
+//Player1 = M1Player1;
+//Player2 = M1Player2;
+
+// document.getElementsByClassName('playground')[0].style.display = "init";
 
 // Loop to display the elements of 2D array. 
 function drawTable(){
@@ -72,7 +176,49 @@ function drawTable(){
 		} 
 	}
 
+function winProof(activSymbol){
+	 for (var i = 0; i < 6; i++) // y
+            {
+                for (var j = 0; j < 7; j++) // x
+                {
+                    // Aktuele Symbol
 
+                    // Horizontale Prüfung
+                    if ((j + 3 < 7) && ((myField[j][i] == activSymbol) && (myField[ j + 1][i] == activSymbol) && (myField[ j + 2][i] == activSymbol) && (myField[ j + 3][i] == activSymbol)))
+                    {
+                        endGame();
+						alert("WIN");
+                    }
+                    //Vertikale Prüfung
+                    if ((i + 3 < 6) && ((myField[j][i] == activSymbol) && (myField[j][i + 1] == activSymbol) && (gfg[j][i + 2] == activSymbol) && (myField[j][i + 3] == activSymbol)))
+                    {
+                        endGame();
+						alert("WIN");
+                    }
+                    // Diagonale Prüfung 1
+                    if ((i + 3 < 6) && (j + 3 < 7) && myField[j][i] == activSymbol && myField[j + 1][i + 1] == activSymbol && myField[j + 2][i + 2] == activSymbol && myField[j + 3][i + 3] == activSymbol)
+                    {
+						endGame();                    
+						alert("WIN");
+                    }
+                    // Diagonale Prüfung 2
+                    if ((j + 3 < 7) && (i - 3 > 0) && myField[j][i] == activSymbol && myField[j + 1][i - 1] == activSymbol && myField[j + 2][i - 2] == activSymbol && myField[j + 3][i - 3] == activSymbol)
+                    {
+						endGame();
+                        alert("WIN");
+                    }
+                }
+            }
+}
+
+function buyMe(){
+	alert("For this option please buy the full version");
+}
+
+function endGame(){
+		document.getElementsByClassName('playground')[0].style.display = "none";
+		document.getElementById('salute').style.display = "initial";
+}
 
 
 

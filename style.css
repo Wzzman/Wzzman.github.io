@@ -4,6 +4,10 @@ html{
 header {
 	background-color:#30506f;
 }
+nav {
+	display: flex;
+	justify-content: space-around;
+}
 body {
  /*  background-image: url('background.png'); */
    
