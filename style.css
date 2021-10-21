@@ -4,6 +4,10 @@ html{
 header {
 	background-color:#30506f;
 }
+nav {
+	display: flex;
+	justify-content: space-around;
+}
 body {
  /*  background-image: url('background.png'); */
    
@@ -33,7 +37,7 @@ div.mn {
     text-align: left;
     margin: 15 auto;
 	padding: 10px;
-	padding-left: 20px;
+	padding-left: 30px;
 	height: 230px;
 	width: 220px;
 	background-color: gray;
