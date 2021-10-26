@@ -2,11 +2,11 @@ import {
     FeldInitialization,
     P1,
     P2
-} from "./model.js"; // Field and Players
+} from "./model.js"; // A Field and Players
 
 import {
     winProofer_1
-} from "./winChecker.js"; // Rules
+} from "./winChecker.js"; // rules
 
 var Player1 = P1; // object
 var Player2 = P2; // object
@@ -119,11 +119,11 @@ function buyMe() {
     alert("For this option please buy the full version");
 }
 
-// hide a playground and show a simple salute
-function endGame() {
-    document.getElementsByClassName('playground')[0].style.display = "none";
-    document.getElementById('salute').style.display = "initial";
-}
+// // hide a playground and show a simple salute
+// function endGame() {
+//     document.getElementsByClassName('playground')[0].style.display = "none";
+//     document.getElementById('salute').style.display = "initial";
+// }
 
 
 
