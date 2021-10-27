@@ -6,7 +6,7 @@ import {
 
 import {
     winProofer_1
-} from "./winChecker.js"; // rules
+} from "./winChecker.js"; // rules, "connect 4" now
 
 var Player1 = P1; // object
 var Player2 = P2; // object
@@ -41,7 +41,6 @@ s1.addEventListener('click', buyMe, false);
 var s2 = document.getElementById("loadMe");
 s2.addEventListener('click', buyMe, false);
 
-=======
 // var myField = FeldInitialization();
 var myField = FeldInitialization();
 
@@ -149,11 +148,6 @@ function buyMe() {
     alert("For this option please buy the full version");
 }
 
-// // hide a playground and show a simple salute
-// function endGame() {
-//     document.getElementsByClassName('playground')[0].style.display = "none";
-//     document.getElementById('salute').style.display = "initial";
-// }
 
 
 
