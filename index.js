@@ -40,8 +40,6 @@ s1.addEventListener('click', buyMe, false);
 var s2 = document.getElementById("loadMe");
 s2.addEventListener('click', buyMe, false);
 
-var myField = FeldInitialization();
-
 // import Players, Players Keys and show it in a body.
 var saver = document.getElementById("saveBTN");
 saver.addEventListener('click', initialization, false);
@@ -113,6 +111,7 @@ function saveTurn(btnNR) {
         }
     }
 }
+
 // "Game Loop" if a column is choosed
 function ColumnChoosed(BTNnr) {
     saveTurn(BTNnr);
@@ -122,11 +121,9 @@ function ColumnChoosed(BTNnr) {
     drawTable();
 
 }
-// document.getElementsByClassName('playground')[0].style.display = "init";
 
 // Loop to display the elements of 2D array. 
 function drawTable() {
-    //	var x = document.getElementsByClassName(".kvadrat");
     document.querySelector(".kvadrat").style.color = "white";
     document.querySelector(".kvadrat").innerHTML = "";
     for (var i = 0; i < 6; i++) {
@@ -140,7 +137,6 @@ function drawTable() {
 }
 
 // my extras
-
 function buyMe() {
     alert("For this option please buy the full version");
 }
