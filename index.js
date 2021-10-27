@@ -13,6 +13,35 @@ var Player2 = P2; // object
 var aPlayer = ""; // string
 var aKey = 0; // int, active players Symbole
 var gameOn = false; //make this game possible
+
+
+var myField = FeldInitialization();
+
+// import Players, Players Keys and show it in a body.
+var saver = document.getElementById("saveBTN");
+saver.addEventListener('click', initialization, false);
+
+var a1 = document.getElementById("btn1");
+a1.addEventListener('click', () => ColumnChoosed(0));
+var a2 = document.getElementById("btn2");
+a2.addEventListener('click', () => ColumnChoosed(1));
+var a3 = document.getElementById("btn3");
+a3.addEventListener('click', () => ColumnChoosed(2));
+var a4 = document.getElementById("btn4");
+a4.addEventListener('click', () => ColumnChoosed(3));
+var a5 = document.getElementById("btn5");
+a5.addEventListener('click', () => ColumnChoosed(4));
+var a6 = document.getElementById("btn6");
+a6.addEventListener('click', () => ColumnChoosed(5));
+var a7 = document.getElementById("btn7");
+a7.addEventListener('click', () => ColumnChoosed(6));
+
+var s1 = document.getElementById("saveMe");
+s1.addEventListener('click', buyMe, false);
+var s2 = document.getElementById("loadMe");
+s2.addEventListener('click', buyMe, false);
+
+=======
 // var myField = FeldInitialization();
 var myField = FeldInitialization();
 alert("Moin");
@@ -39,6 +68,7 @@ var s1 = document.getElementById("saveMe");
 s1.addEventListener('click', buyMe, false);
 var s2 = document.getElementById("loadMe");
 s2.addEventListener('click', buyMe, false);
+
 
 // game initialisation, 
 function initialization() {
@@ -124,18 +154,6 @@ function buyMe() {
 //     document.getElementsByClassName('playground')[0].style.display = "none";
 //     document.getElementById('salute').style.display = "initial";
 // }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
