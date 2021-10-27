@@ -44,7 +44,7 @@ s2.addEventListener('click', buyMe, false);
 =======
 // var myField = FeldInitialization();
 var myField = FeldInitialization();
-alert("Moin");
+
 // import Players, Players Keys and show it in a body.
 var saver = document.getElementById("saveBTN");
 saver.addEventListener('click', initialization, false);
