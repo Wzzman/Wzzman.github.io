@@ -100,7 +100,6 @@ function Player_Change() {
 
 // proof and save a turn
 function saveTurn(btnNR) {
-    // alert("du hast diese Column gewählt: " + btnNR);
     if (gameOn) {
         for (var i = 0; i < 6; i++) {
             if (myField[5 - i][btnNR] == 0) {
