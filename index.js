@@ -6,7 +6,7 @@ import {
 
 import {
     winProofer_1
-} from "./winChecker.js"; // rules
+} from "./winChecker.js"; // rules, "connect 4" now
 
 var Player1 = P1; // object
 var Player2 = P2; // object
@@ -40,6 +40,33 @@ s1.addEventListener('click', buyMe, false);
 var s2 = document.getElementById("loadMe");
 s2.addEventListener('click', buyMe, false);
 
+var myField = FeldInitialization();
+
+// import Players, Players Keys and show it in a body.
+var saver = document.getElementById("saveBTN");
+saver.addEventListener('click', initialization, false);
+
+var a1 = document.getElementById("btn1");
+a1.addEventListener('click', () => ColumnChoosed(0));
+var a2 = document.getElementById("btn2");
+a2.addEventListener('click', () => ColumnChoosed(1));
+var a3 = document.getElementById("btn3");
+a3.addEventListener('click', () => ColumnChoosed(2));
+var a4 = document.getElementById("btn4");
+a4.addEventListener('click', () => ColumnChoosed(3));
+var a5 = document.getElementById("btn5");
+a5.addEventListener('click', () => ColumnChoosed(4));
+var a6 = document.getElementById("btn6");
+a6.addEventListener('click', () => ColumnChoosed(5));
+var a7 = document.getElementById("btn7");
+a7.addEventListener('click', () => ColumnChoosed(6));
+
+var s1 = document.getElementById("saveMe");
+s1.addEventListener('click', buyMe, false);
+var s2 = document.getElementById("loadMe");
+s2.addEventListener('click', buyMe, false);
+
+
 // game initialisation, 
 function initialization() {
     // ClearAll();
@@ -71,7 +98,6 @@ function Player_Change() {
 
 // proof and save a turn
 function saveTurn(btnNR) {
-    // alert("du hast diese Column gewählt: " + btnNR);
     if (gameOn) {
         for (var i = 0; i < 6; i++) {
             if (myField[5 - i][btnNR] == 0) {
@@ -118,23 +144,6 @@ function drawTable() {
 function buyMe() {
     alert("For this option please buy the full version");
 }
-
-// // hide a playground and show a simple salute
-// function endGame() {
-//     document.getElementsByClassName('playground')[0].style.display = "none";
-//     document.getElementById('salute').style.display = "initial";
-// }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
