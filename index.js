@@ -14,7 +14,6 @@ var aPlayer = ""; // string
 var aKey = 0; // int, active players Symbole
 var gameOn = false; //make this game possible
 
-
 var myField = FeldInitialization();
 
 // import Players, Players Keys and show it in a body.
@@ -41,7 +40,6 @@ s1.addEventListener('click', buyMe, false);
 var s2 = document.getElementById("loadMe");
 s2.addEventListener('click', buyMe, false);
 
-// var myField = FeldInitialization();
 var myField = FeldInitialization();
 
 // import Players, Players Keys and show it in a body.
