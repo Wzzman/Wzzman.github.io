@@ -13,7 +13,7 @@ var Player2 = P2; // object
 var aPlayer = ""; // string
 var aKey = 0; // int, active players Symbole
 var gameOn = false; //make this game possible
-// var myField = FeldInitialization();
+
 var myField = FeldInitialization();
 
 // import Players, Players Keys and show it in a body.
